@@ -1,0 +1,22 @@
+name: Java CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Pobieranie kodu z repozytorium
+        uses: actions/checkout@v3
+
+      - name: ☕ Ustawienie Java 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: 🔨 Budowanie i testowanie projektu Maven
+        run: mvn clean install
