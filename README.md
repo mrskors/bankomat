@@ -1,5 +1,8 @@
 # 💳 Bankomat – aplikacja w Javie (CLI)
 
+![Java CI](https://github.com/mrskors/bankomat/actions/workflows/maven.yml/badge.svg)
+
+
 Aplikacja symuluje działanie bankomatu w trybie tekstowym. Pozwala użytkownikowi na:
 - logowanie kartą i PIN-em,
 - sprawdzanie salda konta,
