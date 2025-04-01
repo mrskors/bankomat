@@ -1,0 +1,5 @@
+2025-04-01 12:59:09 [INFO] [bankomat.ATMApp] - Użytkownik zalogował się do systemu
+2025-04-01 12:59:17 [INFO] [bankomat.ATMApp] - Użytkownik wybrał opcję: 2
+2025-04-01 12:59:32 [INFO] [bankomat.Account] - Na konto 07123456789997543352279156 wpłacono 1.0 PLN. Nowe saldo: 1.0
+2025-04-01 12:59:38 [INFO] [bankomat.ATMApp] - Użytkownik wybrał opcję: 3
+2025-04-01 12:59:40 [WARN] [bankomat.Account] - Nieudana próba wypłaty 3.0 PLN z konta 07123456789997543352279156 – niewystarczające środki

@@ -2,10 +2,13 @@ package bankomat;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ATMTest {
+    private static final Logger logger = LoggerFactory.getLogger(ATMTest.class);
     private ATM atm;
     private Card card;
 
@@ -23,16 +26,24 @@ class ATMTest {
 
     @Test
     void shouldAuthenticateWithCorrectPin() {
+        logger.info("🔐 Test: poprawna autoryzacja PIN");
+
         boolean result = atm.authenticate(card, "1234");
         assertTrue(result);
         assertTrue(atm.isAuthenticated());
+
+        logger.info("✔ Autoryzacja zakończona sukcesem");
     }
 
     @Test
     void shouldNotAuthenticateWithIncorrectPin() {
+        logger.info("🚫 Test: odrzucenie błędnego PIN (użyty PIN: 9999, oczekiwany rezultat: false)");
+
         boolean result = atm.authenticate(card, "9999");
         assertFalse(result);
         assertFalse(atm.isAuthenticated());
+
+        logger.info("✔ Autoryzacja została prawidłowo odrzucona");
     }
 
     @Test

@@ -1,10 +1,13 @@
 package bankomat;
 
 import bankomat.generator.AccountNumberGenerator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 
 public class ATMApp {
+    private static final Logger logger = LoggerFactory.getLogger(ATMApp.class);
 
     public static void main(String[] args) {
         Bank bank = new Bank();
@@ -24,8 +27,10 @@ public class ATMApp {
 
             switch (choice) {
                 case "1" -> {
-                    if (atm.authenticate(card, "0000"))
+                    if (atm.authenticate(card, "0000")) {
                         flag = false;
+                        logger.info("Użytkownik zalogował się do systemu");
+                    }
                 }
                 case "2" -> {
                     System.out.println("Do zobaczenia!");
@@ -39,6 +44,7 @@ public class ATMApp {
             printTransactionMenu();
 
             String action = scanner.nextLine();
+            logger.info("Użytkownik wybrał opcję: {}", action);
 
             switch (action) {
                 case "1":

@@ -2,11 +2,13 @@ package bankomat;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class BankTest {
-
+    private static final Logger logger = LoggerFactory.getLogger(BankTest.class);
     private Bank bank;
     private Account account;
     private String accountNumber;
